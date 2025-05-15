@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "website_url": {
+      "type": "string",
+      "required": true,
+      "regex": "^https:\\/\\/"
+    },
+    "google_play_url": {
+      "type": "string",
+      "regex": "^https:\\/\\/"
+    },
+    "appstore_url": {
+      "type": "string",
+      "regex": "^https:\\/\\/"
+    }
+  }
+}
