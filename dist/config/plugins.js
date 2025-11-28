@@ -1,0 +1,24 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = ({ env }) => ({
+    upload: {
+        config: {
+            provider: "aws-s3",
+            providerOptions: {
+                sizeLimit: 10 * 1024 * 1024, // 10 MB
+                accessKeyId: env("AWS_ACCESS_KEY_ID"),
+                secretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
+                region: env("AWS_REGION"),
+                params: {
+                    ACL: null, // Disable ACL for buckets with "Bucket owner enforced" ownership
+                    Bucket: env("AWS_BUCKET_NAME"),
+                },
+            },
+            actionOptions: {
+                upload: {},
+                uploadStream: {},
+                delete: {},
+            },
+        },
+    },
+});
