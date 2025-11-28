@@ -8,6 +8,7 @@ export default ({ env }) => ({
         secretAccessKey: env("AWS_SECRET_ACCESS_KEY"),
         region: env("AWS_REGION"),
         params: {
+          ACL: null, // Disable ACL for buckets with "Bucket owner enforced" ownership
           Bucket: env("AWS_BUCKET_NAME"),
         },
       },
